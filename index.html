@@ -3,66 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accordion Example</title>
+  <title>Guía de Talles Mirrow</title>
+  <link rel="shortcut icon" href="logo.JPG" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ 
+  
 </head>
 <body>
-  <div class="accordion-container">
-    <!-- Item 1 -->
-    <div class="accordion-item">
-      <input type="checkbox" id="section1" style="display: none;">
-      <label for="section1" class="accordion-label">
-        Short de baño
-        <span>▼</span>
-      </label>
-      <div class="accordion-content" id="content1">
-       <img src="baño.jpg" alt="tabla de talles baño">
+  <header>
+    <h1 class="titulo">Guia de Talles</h1>
+    
+  </header>
+  <main>
+    <div class="accordion-container">
+      <!-- Accordion Items -->
+      <div class="accordion-item">
+        <input type="checkbox" id="short-bano">
+        <label for="short-bano" class="accordion-label">
+          Short de baño
+          <span>▼</span>
+        </label>
+        <div class="accordion-content">
+          <img src="img/baño.jpg" alt="Tabla de talles baño">
+        </div>
+      </div>
+      <div class="accordion-item">
+        <input type="checkbox" id="remeras">
+        <label for="remeras" class="accordion-label">
+          Remeras
+          <span>▼</span>
+        </label>
+        <div class="accordion-content">
+          <img src="img/remera.jpg" alt="Guía de talles remera">
+        </div>
+      </div>
+      <div class="accordion-item">
+        <input type="checkbox" id="jeans-chupin">
+        <label for="jeans-chupin" class="accordion-label">
+          Jeans Chupin
+          <span>▼</span>
+        </label>
+        <div class="accordion-content">
+          <img src="img/jean-chupin.jpg" alt="Tabla de talles jeans chupin">
+        </div>
+      </div>
+      <div class="accordion-item">
+        <input type="checkbox" id="hawaiian-shirts">
+        <label for="hawaiian-shirts" class="accordion-label">
+          Camisas hawainas
+          <span>▼</span>
+        </label>
+        <div class="accordion-content">
+          <img src="img/hawainas.jpg" alt="Tabla de talles camisas hawainas">
+        </div>
+      </div>
+      <div class="accordion-item">
+        <input type="checkbox" id="bermudas-jogger">
+        <label for="bermudas-jogger" class="accordion-label">
+          Bermudas jogger y cargos
+          <span>▼</span>
+        </label>
+        <div class="accordion-content">
+          <img src="img/bermudas-jogger-cargo.png" alt="Tabla de talles bermudas jogger y cargos">
+        </div>
+      </div>
+      <div class="accordion-item">
+        <input type="checkbox" id="gabardina-pants">
+        <label for="gabardina-pants" class="accordion-label">
+          Pantalones de gabardina
+          <span>▼</span>
+        </label>
+        <div class="accordion-content">
+          <img src="img/gabardina.jpg" alt="Tabla de talles pantalones de gabardina">
+        </div>
       </div>
     </div>
-    <!-- Item 2 -->
-    <div class="accordion-item">
-      <input type="checkbox" id="section2" style="display: none;">
-      <label for="section2" class="accordion-label">
-        Remeras
-        <span>▼</span>
-      </label>
-      <div class="accordion-content" id="content2">
-       <img src="remera.jpg" alt="guia de talles remera">
+  </main>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <p>Email: info@mirrow.com</p>
+        <p>Teléfono: +54 11 1234-5678</p>
+      </div>
+      <div class="footer-section">
+        <h3>Redes Sociales</h3>
+        <div class="social-icons">
+          <a href="#" title="Facebook" class="fab fa-facebook-f"></a>
+          <a href="#" title="Instagram" class="fab fa-instagram"></a>
+          <a href="#" title="Twitter" class="fab fa-twitter"></a>
+        </div>
+        
+      </div>
+      <div class="footer-section">
+        <h3>Dirección</h3>
+        <p>Castelli 334, Buenos Aires, Argentina</p>
+        <p>Sarmiento 2790, Buenos Aires, Argentina</p>
       </div>
     </div>
-    <!-- Item 3 -->
-    <div class="accordion-item">
-      <input type="checkbox" id="section3" style="display: none;">
-      <label for="section3" class="accordion-label">
-        Jeans Chupin
-        <span>▼</span>
-      </label>
-      <div class="accordion-content" id="content3">
-       <img src="jean-chupin.jpg" alt="tabla de talles jean chupin">
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Select all accordion labels and their respective content
-    const labels = document.querySelectorAll('.accordion-label');
-
-    labels.forEach(label => {
-      label.addEventListener('click', () => {
-        const content = label.nextElementSibling;
-        const isOpen = content.style.maxHeight;
-
-        // Close all accordions
-        document.querySelectorAll('.accordion-content').forEach(otherContent => {
-          otherContent.style.maxHeight = null;
-        });
-
-        // Toggle the clicked accordion
-        if (!isOpen) {
-          content.style.maxHeight = content.scrollHeight + "px";
-        }
-      });
-    });
-  </script>
+  </footer>
+  <script src="main.js"></script>
 </body>
 </html>
