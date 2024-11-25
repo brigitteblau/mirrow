@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordion Example</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="accordion-container">
+    <!-- Item 1 -->
+    <div class="accordion-item">
+      <input type="checkbox" id="section1" style="display: none;">
+      <label for="section1" class="accordion-label">
+        Short de baño
+        <span>▼</span>
+      </label>
+      <div class="accordion-content" id="content1">
+       <img src="baño.jpg" alt="tabla de talles baño">
+      </div>
+    </div>
+    <!-- Item 2 -->
+    <div class="accordion-item">
+      <input type="checkbox" id="section2" style="display: none;">
+      <label for="section2" class="accordion-label">
+        Remeras
+        <span>▼</span>
+      </label>
+      <div class="accordion-content" id="content2">
+       <img src="remera.jpg" alt="guia de talles remera">
+      </div>
+    </div>
+    <!-- Item 3 -->
+    <div class="accordion-item">
+      <input type="checkbox" id="section3" style="display: none;">
+      <label for="section3" class="accordion-label">
+        Jeans Chupin
+        <span>▼</span>
+      </label>
+      <div class="accordion-content" id="content3">
+       <img src="jean-chupin.jpg" alt="tabla de talles jean chupin">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Select all accordion labels and their respective content
+    const labels = document.querySelectorAll('.accordion-label');
+
+    labels.forEach(label => {
+      label.addEventListener('click', () => {
+        const content = label.nextElementSibling;
+        const isOpen = content.style.maxHeight;
+
+        // Close all accordions
+        document.querySelectorAll('.accordion-content').forEach(otherContent => {
+          otherContent.style.maxHeight = null;
+        });
+
+        // Toggle the clicked accordion
+        if (!isOpen) {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
